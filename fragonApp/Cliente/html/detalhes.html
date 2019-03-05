@@ -1,0 +1,21 @@
+﻿<div ng-controller="detalhesClienteController">
+    <table class="table">
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>CPF</th>
+            <th>Profissão</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>{{Cliente.data.nome}}  {{Cliente.data.sobrenome}}</td>
+            <td>{{Cliente.data.idade}}</td>
+            <td>{{Cliente.data.cpf}}</td>
+            <td>{{Cliente.data.profissao}}</td>
+            <td>
+                <a class="btn btn-primary" href="#!/editar/{{Cliente.data.id}}">Editar</a>
+            </td>
+        </tr>
+    </table>
+    <a class="btn btn-outline-dark" href="/Views/Home/Index.cshtml">voltar</a>
+</div>

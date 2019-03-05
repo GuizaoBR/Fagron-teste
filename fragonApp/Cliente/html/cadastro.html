@@ -1,0 +1,78 @@
+﻿<div ng-controller="cadastroController">
+    <p ng-show="mensagem.length" class="alert alert-info">{{mensagem}}</p>
+    <form name="formulario" ng-submit="Salvar()" novalidate>
+        <fieldset>
+            <div class="form-group">
+                <label for="nome">
+                    Nome*
+                </label>
+                <input id="nome" name="nome" type="text" ng-model="Cliente.nome" required class="form-control" />
+                <span ng-show="formulario.$submitted && formulario.nome.$error.required"
+                      class="form-control alert-danger"> Nome obrigatório
+                </span>
+
+            </div>
+            <div class="form-group">
+                <label for="sobrenome">
+                    Sobrenome*
+                </label>
+                <input id="sobrenome" name="sobrenome" type="text" ng-model="Cliente.sobrenome" required class="form-control" />
+                <span ng-show="formulario.$submitted && formulario.sobrenome.$error.required"
+                      class="form-control alert-danger">
+                    Sobrenome obrigatório
+                </span>
+
+            </div>
+            <div class="form-group">
+                <label for="cpf">
+                    CPF*
+                </label>
+                <input id="cpf" name="cpf" type="text" ng-model="Cliente.cpf"  class="form-control" mascara mask="999.999.999-99" cpf-valido required/>
+                <span ng-show="formulario.$submitted && formulario.cpf.$error.required"
+                      class="form-control alert-danger">
+                    CPF obrigatório
+                </span>
+                <span ng-show="formulario.$submitted && formulario.cpf.$error.cpfValido"  class="form-control alert-danger">CPF Inválido</span>
+                <span ng-show="CPFErro.length" class="form-control alert-danger">{{CPFErro}}</span>
+
+
+
+            </div>
+            <div class="form-group">
+                <label for="idade">
+                    Idade*
+                </label>
+                <input id="idade" name="idade" type="text" ng-model="Cliente.idade" required class="form-control" />
+                <span ng-show="formulario.$submitted && formulario.idade.$error.required"
+                      class="form-control alert-danger">
+                    Idade obrigatório
+                </span>
+                <!--<input id="nascimento" type="text" ng-model="Cliente.Nascimento" required class="form-control" mascara mask="99/99/9999" />-->
+
+
+            </div>
+            <div class="form-group">
+                <label for="profissao">
+                    Profissão
+                </label>
+                <select class="form-control custom-select" id="profissao" ng-model="Cliente.profissao">
+                    <option  value="0">Nenhum</option>
+                    <option value="1" label="Programador" >Programador</option>
+                    <option value="2" label="Analista" >Analista</option>
+                    <option value="3" label="Gerente" >Gerente</option>
+                    <option value="4" label="Estagiário" >Estagiário</option>
+                    <option value="5" label="QA" >QA</option>
+
+                </select>
+
+            </div>
+
+
+            <button class="btn btn-primary" type="submit">Salvar</button>
+            <a class="btn btn-outline-dark" href="/Views/Home/Index.cshtml">Voltar</a>
+        </fieldset>
+        
+    </form>
+
+</div>
+

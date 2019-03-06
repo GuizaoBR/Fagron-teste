@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col-md-12">
             <form>
-                <div class="input-group mb-3">
+                <div class="input-group mb-3 ">
                     <div class="input-group-prepend">
-                        <a class="btn btn-outline-secondary" href="#!/cadastro">Novo Cliente</a>
+                        <a class="btn btn-outline-secondary rounded-left " href="#!/cadastro">Novo Cliente</a>
                     </div>
-                    <input class="form-control" placeholder="Pesquisar" ng-model="filtro">
+                    <input class="form-control rounded-right " placeholder="Pesquisar" ng-model="filtro">
                 </div>
             </form>
         </div>
@@ -15,20 +15,25 @@
         <br />
         <p ng-show="mensagem.length" class="alert alert-danger">{{mensagem}}</p>
         <table class="table table-hover">
-            <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">CPF</th>
-                <th scope="col">Idade</th>
-                <th scope="col"></th>
-            </tr>
-            <tr ng-repeat="cliente in Clientes.data | filter: filtro" class="tabela-animada">
-                <td>{{cliente.nome}}</td>
-                <td>{{cliente.cpf}}</td>
-                <td>
-                    <a class="btn btn-primary" href="#!/detalhes/{{cliente.id}}">Detalhes</a>
-                    <button class="btn btn-danger" ng-click="deleta(cliente)">Deletar</button>
-                </td>
-            </tr>
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Idade</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="cliente in Clientes.data | filter: filtro" class="tabela-animada">
+                    <td>{{cliente.nome}}</td>
+                    <td>{{cliente.cpf}}</td>
+                    <td>{{cliente.idade}}</td>
+                    <td>
+                        <a class="btn btn-primary rounded" href="#!/detalhes/{{cliente.id}}">Detalhes</a>
+                        <button class="btn btn-danger rounded" ng-click="deleta(cliente)">Deletar</button>
+                    </td>
+                </tr>
+            </tbody>
         </table>
 
     </div>

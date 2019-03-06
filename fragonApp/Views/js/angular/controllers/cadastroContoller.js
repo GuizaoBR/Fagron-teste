@@ -4,11 +4,10 @@
     $scope.mensagem = "";
     $scope.CPFErro = "";
     if ($routeParams.id) {
-        console.log("Editando Cliente: " + $routeParams.id)
         clienteService
             .getClientePorId($routeParams.id)
             .then(function (Cliente) {
-                console.log(Cliente);
+
                 $scope.Cliente = Cliente.data;
             });
     } 
@@ -28,10 +27,7 @@
     
     
     $scope.Salvar = function () {
-        $scope.Cliente.cpf = $('#cpf').cleanVal();;
-
         for (let cliente = 0; cliente < listaCPF.length; cliente++) {
-            console.log("Entrou for");
             if ($scope.Cliente.cpf == listaCPF[cliente].cpf) {
                 if ($routeParams.id) {
                     var clienteEditado = {}
@@ -43,7 +39,6 @@
                         $scope.formulario.$valid = true
                     }
                 } else {
-                    console.log("Encontrou CPF");
                     $scope.CPFErro = "CPF já cadastrado";
                     $scope.formulario.$valid = false;
                     break;
@@ -51,11 +46,8 @@
             } else {
                 $scope.CPFErro = "";
             }
-
-            
         }
-        
-
+     
 
         if ($scope.formulario.$valid) {
 
@@ -68,9 +60,9 @@
             clienteService.criar($scope.Cliente)
                 .then(function () {
                     $scope.mensagem = "Cliente " + $scope.Cliente.nome + " cadastrado";
-                }, function (erro) {
-                    console.log(erro);
-                    console.log("Falha");
+                    $scope.Cliente = {};
+                    $scope.formulario.$setPristine();
+
                 })
             }
         }

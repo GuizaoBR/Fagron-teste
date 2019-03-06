@@ -1,6 +1,5 @@
 ﻿angular.module("fragonApp").controller("listaClientesController", function ($scope, clienteService) {
 
-    console.log
 
     $scope.Clientes = [];
     $scope.mensagem = "";
@@ -12,6 +11,9 @@
         .then(function (cliente) {
             $scope.Clientes = cliente;
         });
+
+
+    
 
     $scope.deleta = function (cliente) {
         clienteService.deletar(cliente)

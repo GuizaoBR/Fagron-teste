@@ -6,9 +6,6 @@
         clienteService.criar($scope.Cliente)
             .then(function () {
 
-            }, function (erro) {
-                console.log(erro);
-                console.log("Falha");
             })
        // $http.post('api/Clientes', $scope.Cliente)
     }

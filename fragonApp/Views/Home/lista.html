@@ -1,6 +1,4 @@
 ﻿<div ng-controller="listaClientesController">
-
-
     <div class="row">
         <div class="col-md-12">
             <form>
@@ -25,8 +23,7 @@
             </tr>
             <tr ng-repeat="cliente in Clientes.data | filter: filtro" class="tabela-animada">
                 <td>{{cliente.nome}}</td>
-                <td id="cpf" >{{cliente.cpf}}</td>
-                <td>{{cliente.idade}}</td>
+                <td>{{cliente.cpf}}</td>
                 <td>
                     <a class="btn btn-primary" href="#!/detalhes/{{cliente.id}}">Detalhes</a>
                     <button class="btn btn-danger" ng-click="deleta(cliente)">Deletar</button>

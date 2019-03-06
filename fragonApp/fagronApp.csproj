@@ -149,15 +149,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cliente\html\cadastro.html" />
-    <Content Include="Cliente\html\detalhes.html" />
-    <Content Include="Cliente\html\lista.html" />
     <Content Include="Views\css\bootstrap-grid.css" />
     <Content Include="Views\css\bootstrap-grid.min.css" />
     <Content Include="Views\css\bootstrap-reboot.css" />
     <Content Include="Views\css\bootstrap-reboot.min.css" />
     <Content Include="Views\css\bootstrap.css" />
     <Content Include="Views\css\bootstrap.min.css" />
+    <Content Include="Views\Home\cadastro.html" />
+    <Content Include="Views\Home\detalhes.html" />
+    <Content Include="Views\Home\lista.html" />
     <Content Include="Views\js\angular-animate.js" />
     <Content Include="Views\js\angular-animate.min.js" />
     <Content Include="Views\js\angular-mocks.js" />
@@ -176,14 +176,13 @@
     <Content Include="Views\js\bootstrap.js" />
     <Content Include="Views\js\bootstrap.min.js" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\OIndex.cshtml" />
     <None Include="Views\js\jquery-3.3.1.intellisense.js" />
     <Content Include="Views\js\jquery-3.3.1.js" />
     <Content Include="Views\js\jquery-3.3.1.min.js" />
     <Content Include="Views\js\jquery-3.3.1.slim.js" />
     <Content Include="Views\js\jquery-3.3.1.slim.min.js" />
     <Content Include="Views\js\jquery.mask.js" />
-    <Content Include="Views\js\mascara\cpfMask.js" />
+    <Content Include="Views\js\mask.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

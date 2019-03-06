@@ -27,7 +27,7 @@
                 <label for="cpf">
                     CPF*
                 </label>
-                <input id="cpf" name="cpf" type="text" ng-model="Cliente.cpf"  class="form-control" mascara mask="999.999.999-99" cpf-valido required/>
+                <input id="cpf" name="cpf" type="text" ng-model="Cliente.cpf"  class="form-control" ui-mask="999.999.999-99" cpf-valido required/>
                 <span ng-show="formulario.$submitted && formulario.cpf.$error.required"
                       class="form-control alert-danger">
                     CPF obrigatório
@@ -42,12 +42,12 @@
                 <label for="idade">
                     Idade*
                 </label>
-                <input id="idade" name="idade" type="text" ng-model="Cliente.idade" required class="form-control" />
-                <span ng-show="formulario.$submitted && formulario.idade.$error.required"
-                      class="form-control alert-danger">
-                    Idade obrigatório
-                </span>
-                <!--<input id="nascimento" type="text" ng-model="Cliente.Nascimento" required class="form-control" mascara mask="99/99/9999" />-->
+               <input id="idade" name="idade" type="number" ng-model="Cliente.idade" required class="form-control" />
+                    <span ng-show="formulario.$submitted && formulario.idade.$error.required"
+                          class="form-control alert-danger">
+                        Idade obrigatório
+                    </span>
+                <!--<input id="nascimento" type="date" ng-model="Cliente.dataNascimento" required class="form-control"  />-->
 
 
             </div>
